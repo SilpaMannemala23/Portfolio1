@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            box-sizing: border-box;
+            padding:0px;
+            margin:0px;
+            text-decoration: none;
+        }
+        :root{
+            --text-color:#fff;
+            --first-bgcolor:#191f36;
+            --second-bgcolor:#262b40;
+            --butn-color:#59b2f4;
+        }
+        .header{
+            display:flex;
+            justify-content: space-between;
+            min-width: 100vw;
+            background-color: var(--first-bgcolor);
+            padding:1rem 9%;
+            border:2px solid white;
+            position: fixed;
+            
+        }
+        .header a{
+            color:var(--text-color);
+
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-around;
+            width:45%;
+        }
+        .logo{
+            font-weight: 700;
+            font-size: 1.6rem;
+        }
+        .navbar a{
+            font-weight:800;
+            font-size: 1.3rem;
+        }
+        #main{
+            display: flex;
+            justify-content: space-around;
+            padding:8rem 10% 4rem;
+            background-color: var(--second-bgcolor);
+            color:var(--text-color);
+            min-height: 100vh;
+
+        }
+        .main-content h2{
+            font-size:2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .main-content h2 span{
+            color:var(--butn-color);
+        }
+        .main-content h1{
+            font-weight: 700;
+            font-size: 3rem;;
+        }
+        .main-content p{
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .main-img img{
+            width:20vw;
+            height:45vh;
+            border-radius: 50%;
+            animation: Fimage 2s ease-in-out 2s infinite;
+
+        }
+        @keyframes Fimage {
+            0%{
+                transform: translateY(0);
+
+            }
+            50%{
+                transform: translateY(2rem); 
+            }
+        }     
+        .social{
+            display: flex;
+            gap:2rem;
+            
+        }
+        .social a{
+            border:0.2rem solid var(--butn-color);
+            border-radius: 50%;
+            padding:0.7rem;
+            color:var(--butn-color);
+            height:3rem;
+            margin-bottom: 2rem;
+        }
+        .social a:hover{
+            background-color: var(--butn-color);
+            color:var(--second-bgcolor);
+            box-shadow: 0 0 1rem var(--butn-color);
+        }
+        .social i{
+            font-size:1.8rem;
+        }
+        .btn{
+            background-color: var(--butn-color);
+            padding:0.7rem 2rem;
+            border-radius:4rem ;
+            box-shadow:0 0 2rem var(--butn-color) ;
+            font-weight:600;
+        }
+        .btn:hover{
+            box-shadow: none;
+        }
+        #services{
+            padding: 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--second-bgcolor);
+            color: var(--text-color);
+        }
+        .heading{
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .heading span{
+            color:var(--butn-color);
+        }
+        .services-content{
+           display:flex;
+           width:80%;
+           gap:5rem;
+           justify-content: center;
+        }
+        .service-items{
+            background-color: var(--second-bgcolor);
+            padding:2rem;
+            text-align: center;
+            border-radius: 1rem;
+            transition:0.4s ease;
+            display: flex;
+            flex-direction: column;
+
+            
+        }
+        .service-items:hover{
+            outline:2px solid  var(--butn-color);
+            transform: translateY(-10px);
+        }
+        .service-items h2{
+            font-size:1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+
+        }
+        .service-items i{
+            font-size: 3rem;
+            color:var(--butn-color);
+            margin-bottom: 1rem;
+        }
+        .service-items p{
+            flex-grow: 1;
+            margin-bottom: 2rem;
+            line-height: 1.5rem;
+
+        }
+        .btn{
+            background-color: var(--butn-color);
+            padding:0.6rem 1.5rem;
+            border-radius: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            color:var(--text-color);
+        }
+        .btn:hover{
+            box-shadow: 0 0 15px var(--butn-color);
+        }
+        #about{
+            display:flex;
+            min-height: 100vh;
+            justify-content: space-around;
+            background-color: var(--second-bgcolor);
+            color: var(--text-color);
+
+        }
+        .about-main{
+            display:flex;
+            gap:7rem;
+            align-items:center;
+            width:70%;
+
+        }
+        .about-img img{
+            border-radius:20px;
+            width:300px;
+            border:4px solid var(--butn-color);
+            padding:8px;
+        }
+        .about-content h1{
+            font-size:3rem;
+            margin-bottom: 1rem;
+            
+        }
+        .about-content span{
+            color:var(--butn-color);
+        }
+        .about-content h2{
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .about-content p{
+            margin-bottom: 2rem;
+            font-size:1.3rem;
+        }
+        .about-content a{
+            background-color: var(--butn-color);
+            padding:0.7rem 2rem;
+            border-radius:4rem ;
+            box-shadow:0 0 2rem var(--butn-color) ;
+            font-weight:600;
+        }
+        #skills{
+            padding-top:8rem;
+            background-color: var(--second-bgcolor);
+            color:var(--text-color);
+            text-align: center;
+            min-height: 100vh;
+        }
+        #skills h1{
+            margin-bottom: 3rem;
+            font-size: 3rem;
+        }
+        .skills-content{
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+            width:80%;
+            gap:6rem;
+            margin:auto;
+        }
+        .bars{
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .bars h3{
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+            text-align:left;
+        }
+        .bars span{
+            float:right;
+            margin-top: -1.2rem;
+            color:var(--butn-color);
+        }
+        .light-bar{
+            background-color: var(--text-color);
+            height:0.5rem;
+            border-radius: 0.5rem;
+            margin-top:0.5rem;
+        }
+        .btn-bar{
+            background-color: var(--butn-color);
+            height:0.5rem;
+            border-radius: 0.5rem;
+            margin-top:-0.5rem;
+        }
+        .Java{
+            width:90%;
+        }
+        .Python{
+            width:75%;
+        }
+        .Sql{
+            width:95%;
+        }
+        .dsa{
+            width:60%
+        }
+        .html{
+            width:90%;
+        }
+        .css{
+            width:80%;
+        }
+        .tailwindcss{
+            width:70%;
+        }
+        .javascript{
+            width:70%;
+        }
+        #contact{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--second-bgcolor);
+            color:var(--text-color);
+            min-height: 100vh;
+            min-width: 70%;
+
+
+        }
+        #contact h1{
+            font-size:3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        #contact span{
+            color:var(--butn-color);
+        }
+        input{
+            width:300px;
+            height:40px;
+            font-size:16px;
+            background-color: var(--second-bgcolor);
+            border-radius: 0.5rem;
+            border:1px solid var(--first-bgcolor);
+            padding:2rem 2rem;    
+            margin-bottom: 1rem;  
+            margin-right: 0.5rem;
+            
+        }
+        textarea{
+            font-size:16px;
+            background-color: var(--second-bgcolor);
+            border-radius: 0.5rem;
+            border:1px solid var(--first-bgcolor);
+            width:38rem;  
+            margin-bottom: 1rem;      
+        }
+
+                  
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="" class="logo">Portfolio</a>
+        <nav class="navbar">
+            <a href="#main">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="main">
+        <div class="main-content">
+            <h2>Hello...</h2>
+            <h1>I'm Silpa Mannemala</h1>
+            <h2>I am an <span>Aspiring Software Engineer</span> </h2>
+            <p>Motivated fresher seeking a Software Engineer role to apply my full-stack development skills and contribute to building efficient and scalable applications.</p>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/silpa-mannemala">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/SilpaMannemala23">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                
+            </div>
+            <a href="C:\Users\User\OneDrive\Desktop\RESUME_SILPA_1.pdf" class="btn">Download CV</a>
+        </div>
+        <div class="main-img">
+            <img src="images.jpg" alt="img">
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-main">
+            <div class="about-img">
+                <img src="images.jpg" alt="img">
+            </div>
+            <div class="about-content">
+                <h1>About <span>Me</span></h1>
+                <h2>Software Engineer</h2>
+                <p>Motivated fresher seeking a Software Engineer role to apply my full-stack development skills and contribute to building efficient and scalable applications.</p>
+                <a href="" class="btn">ReadMore</a>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <h1 class="heading">My <span>Services</span></h1>
+        <div class="services-content">
+            <div class="service-items">
+                <i class="fa-brands fa-java"></i>
+                <h2>Java development</h2>
+                <p>I have experience in Java development using core concepts like object-oriented programming, exception handling, and multithreading. I have built backend applications using Spring Boot, JDBC, and Hibernate, along with working on MySQL databases for CRUD operations. I have also integrated frontend technologies like HTML, CSS, and JavaScript and used Maven for project management.</p>
+                <a href="" class="btn">ReadMore</a>
+            </div>
+            <div class="service-items">
+                <i class="fa-solid fa-code"></i>
+                <h2>Web development</h2>
+                <p>I have experience in web development, building responsive and user-friendly interfaces using HTML, CSS, and JavaScript. I have worked on integrating frontend designs with backend services to create dynamic web applications. I focus on clean UI design, performance, and ensuring a smooth user experience across devices.</p>
+                <a href="" class="btn">ReadMore</a>
+            </div>
+            <div class="service-items">
+                <i class="fa-solid fa-database"></i>
+                <h2>Database development</h2>
+                <p>I have experience working with databases, designing tables and managing data using SQL. I have performed CRUD operations and written optimized queries for efficient data retrieval. I have worked with relational databases like MySQL and ensured data integrity and normalization.</p>
+                <a href="" class="btn">ReadMore</a>
+            </div>
+            
+        </div>
+    </section>
+    <section id="skills">
+        <h1>My Skills</h1>
+        <div class="skills-content">
+            <div>
+                <div class="bars">
+                    <h3>Java</h3>
+                    <span>90%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar Java"></div>
+                </div>
+                <div class="bars">
+                    <h3>Python</h3>
+                    <span>75%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar Python"></div>
+                </div>
+                <div class="bars">
+                    <h3>SQL</h3>
+                    <span>95%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar Sql"></div>
+                </div>
+                <div class="bars">
+                    <h3>DSA</h3>
+                    <span>60%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar dsa"></div>
+                </div>
+            </div>
+            <div>
+                <div class="bars">
+                    <h3>HTML</h3>
+                    <span>90%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar html"></div>
+                </div>
+                <div class="bars">
+                    <h3>CSS</h3>
+                    <span>80%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar css"></div>
+                </div>
+                <div class="bars">
+                    <h3>Tailwindcss</h3>
+                    <span>70%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar tailwindcss"></div>
+                </div>
+                <div class="bars">
+                    <h3>JavaScript</h3>
+                    <span>70%</span>
+                    <div class="light-bar"></div>
+                    <div class="btn-bar javascript"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="contact">
+        <h1>Contact <span>Me</span></h1>
+        <form>
+            <div class="fields">
+                <input type="text" placeholder="Enter your name">
+                <input type="text" placeholder="Enter your email"><br>
+                <input type="text" placeholder="Enter your mobile">
+                <input type="text" placeholder="Enter subject of email"><br>
+                <textarea rows="10" cols="10" placeholder="Your message"></textarea>
+            </div>    
+        </form>
+        <a href="" class="btn">Send Messages</a>
+    </section>
+    
+    
+</body>
+</html>
